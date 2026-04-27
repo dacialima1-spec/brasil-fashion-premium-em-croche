@@ -933,6 +933,46 @@ src="https://www.facebook.com/tr?id=2276132352920942&ev=PageView&noscript=1"
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
+  /* ========= CAROUSEL ========= */
+  .carousel-section { padding: 80px 0; overflow: hidden; }
+  @media (max-width: 700px) { .carousel-section { padding: 56px 0; } }
+  .carousel-section .carousel-header { padding: 0 24px; text-align: center; margin-bottom: 40px; }
+  .carousel-track-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  .carousel-track-wrapper::before,
+  .carousel-track-wrapper::after {
+    content: "";
+    position: absolute; top: 0; bottom: 0;
+    width: 100px; z-index: 2; pointer-events: none;
+  }
+  .carousel-track-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+  .carousel-track-wrapper::after  { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: carousel-scroll 24s linear infinite;
+    padding: 8px 0;
+  }
+  .carousel-track:hover { animation-play-state: paused; }
+  @keyframes carousel-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .carousel-slide {
+    flex: 0 0 auto;
+    width: 260px;
+  }
+  .carousel-slide .ph {
+    aspect-ratio: 4/5;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px -10px oklch(0.22 0.025 60 / 0.18);
+  }
+  @media (max-width: 700px) { .carousel-slide { width: 190px; } }
+
   /* Countdown */
   .countdown {
     display: inline-flex; gap: 6px; align-items: center;
@@ -1205,6 +1245,32 @@ src="https://www.facebook.com/tr?id=2276132352920942&ev=PageView&noscript=1"
         <h4>+5 Moldes de Inverno</h4>
         <p>Peças com alto potencial de uso e venda durante o ano todo.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== GALLERY CAROUSEL ================== -->
+<section class="carousel-section" aria-label="Galeria de moldes exclusivos">
+  <div class="carousel-header reveal">
+    <div class="kicker center">Galeria</div>
+    <h2 class="h2">Veja alguns dos <em>moldes exclusivos</em></h2>
+  </div>
+  <div class="carousel-track-wrapper">
+    <div class="carousel-track">
+      <!-- Imagens reais — substitua os src abaixo quando tiver as fotos -->
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_10_reohkf.png" alt="Molde exclusivo 1"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_13_yzcng4.png" alt="Molde exclusivo 2"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_28_qztq2l.png" alt="Molde exclusivo 3"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_32_emcpc3.png" alt="Molde exclusivo 4"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_32_59_szsr5z.png" alt="Molde exclusivo 5"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_02_i5jxxr.png" alt="Molde exclusivo 6"></div></div>
+      <!-- Duplicados para loop infinito -->
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_10_reohkf.png" alt="Molde exclusivo 1"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_13_yzcng4.png" alt="Molde exclusivo 2"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_28_qztq2l.png" alt="Molde exclusivo 3"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_32_emcpc3.png" alt="Molde exclusivo 4"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_32_59_szsr5z.png" alt="Molde exclusivo 5"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_02_i5jxxr.png" alt="Molde exclusivo 6"></div></div>
     </div>
   </div>
 </section>
