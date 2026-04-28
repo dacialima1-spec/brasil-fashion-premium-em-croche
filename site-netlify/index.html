@@ -980,6 +980,29 @@ src="https://www.facebook.com/tr?id=2276132352920942&ev=PageView&noscript=1"
   }
   @media (max-width: 700px) { .carousel-slide { width: 190px; } }
 
+  /* Offers two-column grid */
+  .offers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .offers-grid { grid-template-columns: 1fr; }
+  }
+  .offers-grid .offer-card {
+    max-width: none;
+    margin: 0;
+  }
+  .offer-card.offer-featured {
+    border-color: var(--verde);
+    box-shadow: 10px 10px 0 var(--verde-dk);
+  }
+  .offer-card.offer-featured .ribbon {
+    background: var(--verde);
+    border-color: var(--verde-dk);
+  }
+
   /* Countdown */
   .countdown {
     display: inline-flex; gap: 6px; align-items: center;
@@ -1264,20 +1287,25 @@ src="https://www.facebook.com/tr?id=2276132352920942&ev=PageView&noscript=1"
   </div>
   <div class="carousel-track-wrapper">
     <div class="carousel-track">
-      <!-- Imagens reais — substitua os src abaixo quando tiver as fotos -->
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_10_reohkf.png" alt="Molde exclusivo 1"></div></div>
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_13_yzcng4.png" alt="Molde exclusivo 2"></div></div>
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_28_qztq2l.png" alt="Molde exclusivo 3"></div></div>
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_32_emcpc3.png" alt="Molde exclusivo 4"></div></div>
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_32_59_szsr5z.png" alt="Molde exclusivo 5"></div></div>
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_02_i5jxxr.png" alt="Molde exclusivo 6"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407601/ChatGPT_Image_28_de_abr._de_2026_17_19_31_y8ldqx.png" alt="Molde exclusivo 1"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_13_cjzeia.png" alt="Molde exclusivo 2"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_09_dr1d1p.png" alt="Molde exclusivo 3"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_17_vzurto.png" alt="Molde exclusivo 4"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_24_xjvqtv.png" alt="Molde exclusivo 5"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_21_zi3z4z.png" alt="Molde exclusivo 6"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_27_xhughd.png" alt="Molde exclusivo 7"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_10_reohkf.png" alt="Molde exclusivo 8"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_13_yzcng4.png" alt="Molde exclusivo 9"></div></div>
       <!-- Duplicados para loop infinito -->
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_10_reohkf.png" alt="Molde exclusivo 1"></div></div>
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_13_yzcng4.png" alt="Molde exclusivo 2"></div></div>
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_28_qztq2l.png" alt="Molde exclusivo 3"></div></div>
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_32_emcpc3.png" alt="Molde exclusivo 4"></div></div>
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_32_59_szsr5z.png" alt="Molde exclusivo 5"></div></div>
-      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_02_i5jxxr.png" alt="Molde exclusivo 6"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407601/ChatGPT_Image_28_de_abr._de_2026_17_19_31_y8ldqx.png" alt="Molde exclusivo 1"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_13_cjzeia.png" alt="Molde exclusivo 2"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_09_dr1d1p.png" alt="Molde exclusivo 3"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_17_vzurto.png" alt="Molde exclusivo 4"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_24_xjvqtv.png" alt="Molde exclusivo 5"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_21_zi3z4z.png" alt="Molde exclusivo 6"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777407600/ChatGPT_Image_28_de_abr._de_2026_17_19_27_xhughd.png" alt="Molde exclusivo 7"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_10_reohkf.png" alt="Molde exclusivo 8"></div></div>
+      <div class="carousel-slide"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777300430/ChatGPT_Image_27_de_abr._de_2026_11_33_13_yzcng4.png" alt="Molde exclusivo 9"></div></div>
     </div>
   </div>
 </section>
@@ -1369,55 +1397,100 @@ src="https://www.facebook.com/tr?id=2276132352920942&ev=PageView&noscript=1"
 <!-- ================== OFFER ================== -->
 <section id="offer" class="offer-wrap" aria-label="Oferta">
   <div class="wrap">
-    <div class="offer-card reveal">
-      <span class="ribbon">💥 Oferta de lançamento</span>
+    <div class="center-block reveal" style="margin-bottom: 40px;">
+      <div class="kicker center">10 — Sua oferta</div>
+      <h2 class="h2">Escolha a oferta <em>ideal pra você</em>:</h2>
+    </div>
 
-      <div class="center-block">
-        <div class="kicker center">10 — Sua oferta</div>
-        <h2 class="h2">Hoje você leva <em>tudo isso</em>:</h2>
-      </div>
+    <div class="offers-grid">
 
-      <div class="ph offer-img">
-        <img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777162877/Untitled_design_-_2026-04-25T212042.263_ubqrnk.png" alt="Tudo que você leva hoje — pacote completo">
-      </div>
-
-      <ul class="recap">
-        <li>Coleção Copa do Mundo (moldes exclusivos)</li>
-        <li>+35 Moldes de Roupinhas (coleção completa)</li>
-        <li>Guia Prático de Medidas do Pet</li>
-        <li>Tabela de Tamanhos (P, M, G + Raças)</li>
-        <li>Guia de Fios Ideais</li>
-        <li>Mini Guia de Precificação</li>
-        <li>Como Vender no Instagram e WhatsApp</li>
-        <li>+5 Moldes Extras de Inverno</li>
-      </ul>
-
-      <div class="price-block">
-        <div class="price-old">De R$ 97,00 por</div>
-        <div class="price-now">
-          <span class="cur">R$</span>17<span class="cents">,90</span>
+      <!-- ── BÁSICO ── -->
+      <div class="offer-card reveal">
+        <span class="ribbon">⚽ Básico</span>
+        <div class="center-block">
+          <h3 class="h3" style="margin-bottom: 4px;">Copa do Mundo</h3>
+          <p style="color: var(--ink-soft); font-size: 15px; margin: 0 0 8px;">O essencial para começar</p>
         </div>
-        <div class="price-meta">
-          <span>Sem mensalidade</span>
-          <span>Sem complicação</span>
-          <span>Acesso imediato</span>
-        </div>
-        <div class="countdown" style="margin-top: 14px;">
-          Essa oferta expira em <b data-countdown="offer">11:42:00</b>
-        </div>
-      </div>
 
-      <div class="offer-cta">
-        <a class="btn big" href="https://pay.hotmart.com/U105555007U?checkoutMode=10" target="_blank" rel="noopener" data-checkout>
-          <span>QUERO COMEÇAR AGORA</span>
-          <span class="arr" aria-hidden="true">→</span>
-        </a>
-        <div class="secure">
-          <span>🔒 Pagamento 100% seguro</span>
-          <span>💳 Pix · Cartão · Boleto</span>
-          <span>🛡️ 7 dias de garantia</span>
+        <ul class="recap" style="grid-template-columns: 1fr;">
+          <li>Coleção Copa do Mundo (moldes exclusivos)</li>
+        </ul>
+
+        <div class="price-block">
+          <div class="price-now">
+            <span class="cur">R$</span>17<span class="cents">,90</span>
+          </div>
+          <div class="price-meta">
+            <span>Acesso imediato</span>
+            <span>Sem mensalidade</span>
+          </div>
+        </div>
+
+        <div class="offer-cta">
+          <a class="btn big" href="https://pay.hotmart.com/U105555007U?checkoutMode=10" target="_blank" rel="noopener">
+            <span>QUERO COMEÇAR AGORA</span>
+            <span class="arr" aria-hidden="true">→</span>
+          </a>
+          <div class="secure">
+            <span>🔒 Pagamento 100% seguro</span>
+            <span>💳 Pix · Cartão · Boleto</span>
+            <span>🛡️ 7 dias de garantia</span>
+          </div>
         </div>
       </div>
+
+      <!-- ── SUPER OFERTA ── -->
+      <div class="offer-card offer-featured reveal">
+        <span class="ribbon">💥 Super Oferta</span>
+
+        <div class="center-block">
+          <h3 class="h3" style="margin-bottom: 4px;">Pacote Completo</h3>
+          <p style="color: var(--ink-soft); font-size: 15px; margin: 0 0 8px;">Tudo isso de uma só vez</p>
+        </div>
+
+        <div class="ph offer-img">
+          <img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777162877/Untitled_design_-_2026-04-25T212042.263_ubqrnk.png" alt="Tudo que você leva hoje — pacote completo">
+        </div>
+
+        <ul class="recap">
+          <li>Coleção Copa do Mundo (moldes exclusivos)</li>
+          <li>+35 Moldes de Roupinhas (coleção completa)</li>
+          <li>Guia Prático de Medidas do Pet</li>
+          <li>Tabela de Tamanhos (P, M, G + Raças)</li>
+          <li>Guia de Fios Ideais</li>
+          <li>Mini Guia de Precificação</li>
+          <li>Como Vender no Instagram e WhatsApp</li>
+          <li>+5 Moldes Extras de Inverno</li>
+        </ul>
+
+        <div class="price-block">
+          <div class="price-old">De R$ 97,00 por</div>
+          <div class="price-now">
+            <span class="cur">R$</span>27<span class="cents">,90</span>
+          </div>
+          <div class="price-meta">
+            <span>Sem mensalidade</span>
+            <span>Sem complicação</span>
+            <span>Acesso imediato</span>
+          </div>
+          <div class="countdown" style="margin-top: 14px;">
+            Essa oferta expira em <b data-countdown="offer">11:42:00</b>
+          </div>
+        </div>
+
+        <div class="offer-cta">
+          <a class="btn big" href="https://pay.hotmart.com/U105589581Y?checkoutMode=10" target="_blank" rel="noopener" data-checkout>
+            <span>QUERO COMEÇAR AGORA</span>
+            <span class="arr" aria-hidden="true">→</span>
+          </a>
+          <div class="secure">
+            <span>🔒 Pagamento 100% seguro</span>
+            <span>💳 Pix · Cartão · Boleto</span>
+            <span>🛡️ 7 dias de garantia</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1433,7 +1506,7 @@ src="https://www.facebook.com/tr?id=2276132352920942&ev=PageView&noscript=1"
       E seu pet faz parte deles. Agora você pode tornar esses momentos ainda mais especiais.
     </p>
     <div class="reveal" style="margin-top: 8px;">
-      <a class="btn big canary-btn" href="https://pay.hotmart.com/U105555007U?checkoutMode=10" target="_blank" rel="noopener">
+      <a class="btn big canary-btn" href="https://pay.hotmart.com/U105589581Y?checkoutMode=10" target="_blank" rel="noopener">
         <span>QUERO FAZER AS ROUPINHAS DO MEU PET</span>
         <span class="arr" aria-hidden="true">→</span>
       </a>
