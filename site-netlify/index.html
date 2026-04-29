@@ -1004,6 +1004,7 @@ src="https://www.facebook.com/tr?id=2276132352920942&ev=PageView&noscript=1"
   }
 
   /* Testimonials static/scroll */
+  .testi-dup { display: none; }
   .testi-track-wrapper {
     padding: 0 24px;
     max-width: 1200px;
@@ -1027,24 +1028,26 @@ src="https://www.facebook.com/tr?id=2276132352920942&ev=PageView&noscript=1"
     object-fit: unset;
     display: block;
   }
+  @keyframes testi-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
   @media (max-width: 700px) {
+    .testi-dup { display: block; }
     .testi-track-wrapper {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
+      padding: 0;
+      overflow: hidden;
     }
-    .testi-track-wrapper::-webkit-scrollbar { display: none; }
     .testi-track {
       display: flex;
       width: max-content;
       gap: 16px;
       padding: 8px 0;
+      animation: testi-scroll 22s linear infinite;
     }
     .testi-slide {
       flex: 0 0 auto;
       width: 75vw;
-      scroll-snap-align: center;
     }
   }
 
@@ -1429,6 +1432,10 @@ src="https://www.facebook.com/tr?id=2276132352920942&ev=PageView&noscript=1"
       <div class="testi-slide reveal"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777419405/ChatGPT_Image_28_de_abr._de_2026_20_29_38_e2lb1a.png" alt="Depoimento 1"></div></div>
       <div class="testi-slide reveal"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777419403/ChatGPT_Image_28_de_abr._de_2026_20_27_43_u9woub.png" alt="Depoimento 2"></div></div>
       <div class="testi-slide reveal"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777419403/ChatGPT_Image_28_de_abr._de_2026_20_28_00_auwp8s.png" alt="Depoimento 3"></div></div>
+      <!-- Duplicatas para loop contínuo no mobile -->
+      <div class="testi-slide testi-dup"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777419405/ChatGPT_Image_28_de_abr._de_2026_20_29_38_e2lb1a.png" alt="Depoimento 1"></div></div>
+      <div class="testi-slide testi-dup"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777419403/ChatGPT_Image_28_de_abr._de_2026_20_27_43_u9woub.png" alt="Depoimento 2"></div></div>
+      <div class="testi-slide testi-dup"><div class="ph"><img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777419403/ChatGPT_Image_28_de_abr._de_2026_20_28_00_auwp8s.png" alt="Depoimento 3"></div></div>
     </div>
   </div>
 </section>
@@ -1682,6 +1689,18 @@ src="https://www.facebook.com/tr?id=2276132352920942&ev=PageView&noscript=1"
     if (heroEl)  heroEl.textContent  = tick(cdHero);
     if (offerEl) offerEl.textContent = tick(cdOffer);
   }, 1000);
+
+  // ───── Testimonials mobile: pausa ao tocar ─────
+  var testiTrack = document.querySelector('.testi-track');
+  if (testiTrack) {
+    var testiWrapper = testiTrack.closest('.testi-track-wrapper');
+    function testiPause() { testiTrack.style.animationPlayState = 'paused'; }
+    function testiPlay()  { testiTrack.style.animationPlayState = 'running'; }
+    testiWrapper.addEventListener('touchstart', testiPause, { passive: true });
+    testiWrapper.addEventListener('touchend',   testiPlay,  { passive: true });
+    testiWrapper.addEventListener('mousedown',  testiPause);
+    testiWrapper.addEventListener('mouseup',    testiPlay);
+  }
 
   // ───── FAQ accordion ─────
   document.querySelectorAll('.faq-item').forEach(function (item) {
