@@ -157,8 +157,17 @@ src="https://www.facebook.com/tr?id=[META_PIXEL_ID]&ev=PageView&noscript=1"
   .eyebrow .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--verde); animation: pulse 1.6s ease-in-out infinite; }
   @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .55; transform: scale(.8); } }
 
-  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
-  @media (max-width: 900px) { .hero { padding: 24px 0 48px; } .hero-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; grid-template-rows: auto auto; column-gap: 48px; row-gap: 0; align-items: start; }
+  .hero-text-top { grid-column: 1; grid-row: 1; }
+  .hero-img-col { grid-column: 2; grid-row: 1 / 3; align-self: center; position: relative; }
+  .hero-text-bottom { grid-column: 1; grid-row: 2; }
+  @media (max-width: 900px) {
+    .hero { padding: 24px 0 48px; }
+    .hero-grid { display: flex; flex-direction: column; gap: 24px; }
+    .hero-text-top { order: 1; }
+    .hero-img-col { order: 2; }
+    .hero-text-bottom { order: 3; }
+  }
 
   .h1 {
     font-family: "Cormorant Garamond", serif; font-weight: 500;
@@ -495,7 +504,7 @@ src="https://www.facebook.com/tr?id=[META_PIXEL_ID]&ev=PageView&noscript=1"
     </div>
 
     <div class="hero-grid">
-      <div>
+      <div class="hero-text-top">
         <div class="eyebrow reveal">
           <span class="pulse"></span>
           Coleção Premium · Copa 2026
@@ -506,6 +515,18 @@ src="https://www.facebook.com/tr?id=[META_PIXEL_ID]&ev=PageView&noscript=1"
         <p class="sub reveal">
           Crie bolsas, acessórios e peças artesanais sofisticadas com identidade brasileira usando receitas visuais premium, passo a passo técnico e modelos prontos para vender.
         </p>
+      </div>
+
+      <div class="hero-img-col reveal">
+        <div class="collage">
+          <img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1778531077/ChatGPT_Image_11_de_mai._de_2026_16_06_35_fm5s7z.png" alt="Peça fashion brasileira premium em crochê" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:28px;">
+          <span class="tag t1">🇧🇷 identidade brasileira</span>
+          <span class="tag t2">✨ estética boutique</span>
+          <div class="stamp">Copa<b>2026</b>Premium</div>
+        </div>
+      </div>
+
+      <div class="hero-text-bottom">
         <div class="mesmo-list reveal">
           <div class="mesmo-item"><span class="check">✅</span> Mesmo que você ainda não faça peças profissionais</div>
           <div class="mesmo-item"><span class="check">✅</span> Mesmo sem ter Instagram grande</div>
@@ -523,15 +544,6 @@ src="https://www.facebook.com/tr?id=[META_PIXEL_ID]&ev=PageView&noscript=1"
           <div class="countdown">
             Oferta especial termina em <b data-countdown="hero">11:59:59</b>
           </div>
-        </div>
-      </div>
-
-      <div class="reveal" style="position:relative;">
-        <div class="collage">
-          <img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1778531077/ChatGPT_Image_11_de_mai._de_2026_16_06_35_fm5s7z.png" alt="Peça fashion brasileira premium em crochê" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:28px;">
-          <span class="tag t1">🇧🇷 identidade brasileira</span>
-          <span class="tag t2">✨ estética boutique</span>
-          <div class="stamp">Copa<b>2026</b>Premium</div>
         </div>
       </div>
     </div>
